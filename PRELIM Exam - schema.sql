@@ -3,12 +3,14 @@ DROP TABLE Shippings;
 DROP TABLE Orders;
 
 create table Users (
-	user_id INT,
-	username VARCHAR(50),
-	email VARCHAR(50),
-	number VARCHAR(50),
-	date_joined DATE
+    user_id INT PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(50),
+    number VARCHAR(50),
+    date_joined DATE,
+    subscription_plan VARCHAR(50)
 );
+
 create table Artists (
 	artist_id INT,
 	username VARCHAR(50),
@@ -31,17 +33,19 @@ create table Songs (
 	genre_id INT,
 	date_created DATE
 );
+
 create table Genres (
     genre_id INT PRIMARY KEY,
     name VARCHAR(50)
 );
 
-create table Listening_History (
+create table Streaming_History (
 	history_id INT,
 	user_id INT,
 	song_id INT,
 	timestamp DATE
 );
+
 create table Liked (
 	user_id INT,
 	song_id INT,
